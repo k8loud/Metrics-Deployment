@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hephaestus-gui-frontend
+  namespace: monitoring
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hephaestus-gui
+  template:
+    metadata:
+      labels:
+        app: hephaestus-gui
+    spec:
+      containers:
+      - name: hephaestus-gui
+        image: <IMAGE_NAME>:<TAG>
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 80

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: metrics-adapter
+  namespace: monitoring
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: metrics-adapter
+  template:
+    metadata:
+      labels:
+        app: metrics-adapter
+    spec:
+      containers:
+        - name: metrics-adapter
+          image: <IMAGE_NAME>:<TAG>
+          args: ["--backend=http://hephaestus-gui:8080"]
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
