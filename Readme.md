@@ -10,7 +10,7 @@ to access pod's shell
 
 ### Deployment steps
 * build angular app
-*  put result files in gui back
+*  put result files (**files** not result directory) in gui back
 * make .jar from gui back & Metrics adapter
 * build docker images in **minikube env**
 * deploy pods
