@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: hepheastus-gui-pvc
-  namespace: monitoring
+  namespace: hephaestus
 spec:
   accessModes:
     - ReadWriteOnce
