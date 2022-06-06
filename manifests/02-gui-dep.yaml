@@ -16,7 +16,7 @@ spec:
       containers:
         - name: hephaestus-gui
           image: <IMAGE_NAME>:<TAG>
-          args: ["--prometheus.address=prometheus:9090"] 
+          args: ["--prometheus.address=prometheus.monitoring:9090"] 
           imagePullPolicy: Never
           ports:
             - containerPort: 8080
