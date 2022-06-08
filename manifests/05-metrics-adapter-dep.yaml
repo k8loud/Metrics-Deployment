@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: metrics-adapter
-          image: <IMAGE_NAME>:<TAG>
+          image: NAME:TAG
           args: ["--backend=http://hephaestus-gui:8080"]
           imagePullPolicy: Never
           ports:

@@ -1,0 +1,54 @@
+kind: ConfigMap 
+apiVersion: v1 
+metadata:
+  name: gui-configmap 
+  namespace: hephaestus
+data:
+  metrics.json: |
+    {
+      "chosenMetrics": [{
+        "values": {
+          "__name__": "kube_node_status_condition"
+        },
+        "isQuery": true
+      }, {
+        "values": {
+          "__name__": "node_network_up"
+        },
+        "isQuery": true
+      }, {
+        "values": {
+          "instance": "192.168.49.2:9100",
+          "job": "node-exporter",
+          "__name__": "node_memory_Active_bytes"
+        },
+        "isQuery": false
+      }, {
+        "values": {
+          "instance": "192.168.49.2:9100",
+          "__name__": "node_filesystem_size_bytes",
+          "job": "node-exporter",
+          "device": "tmpfs",
+          "fstype": "tmpfs",
+          "mountpoint": "\/tmp"
+        },
+        "isQuery": false
+      }, {
+        "values": {
+          "instance": "192.168.49.2:9100",
+          "__name__": "node_filesystem_avail_bytes",
+          "job": "node-exporter",
+          "device": "tmpfs",
+          "fstype": "tmpfs",
+          "mountpoint": "\/tmp"
+        },
+        "isQuery": false
+      }, {
+        "values": {
+          "instance": "192.168.49.2:9100",
+          "job": "node-exporter",
+          "__name__": "node_memory_MemTotal_bytes"
+        },
+        "isQuery": false
+      }]
+    }
