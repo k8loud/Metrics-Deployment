@@ -24,6 +24,10 @@ If this is your first time dealing with Kubernetes, Prometheus, and Hephaestus w
 
 `kubectl apply -f Deployment/manifests/`
 
+* Expose GUI service - Service can be exposed using command `minikube service -n hephaestus hephaestus-gui`. This will expose `<SERVICE ADDRESS: SERVICE PORT>` address and allow you to see acces Hephaestus GUI on `<SERVICE ADDRESS: SERVICE PORT>/app/index.html`.
+
+* The result of rule engine can be seen on [Hephaestus Demo - Metrics Adapter](https://github.com/Hephaestus-Metrics/Metrics-Adapter) console. To access console use command `minkube dashboard` and select Metrics Adapter pod. Console can then be displayed by selecting icon in top right.
+
 
 Those steps allow you to see a real-life example of an application working with Kubernetes and Hephaestus. For more details on how to use Hephaestus read the instructions attached to specific Project parts:
 * [Hephaestus GUI frontend](https://github.com/Hephaestus-Metrics/GUI)
