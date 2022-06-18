@@ -1,4 +1,4 @@
-# Deployment files for the Hephaestus project
+# Deployment files for the Hephaestus Project
 The repository contains files with [Hephaestus Project](https://github.com/orgs/Hephaestus-Metrics/repositories "Hephaestus Project") configuration for Kubernetes.
 Some declarations have been provided as an example and should be changed before real-life deployment.
 Those are: 
