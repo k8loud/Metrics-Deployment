@@ -16,15 +16,23 @@ spec:
       containers:
         - name: hephaestus-gui
           image: NAME:TAG
-          args: ["--prometheus.address=prometheus.monitoring:9090", "--saved.path=/../metrics/savedMetrics/metrics.json", "--config.path=/../metrics/configMetrics/metrics.json"] 
+          env:
+          - name: prometheus.address
+            value: prometheus.monitoring:9090
+          - name: saved.path
+            value: /../storage/metrics/savedMetrics/metrics.json
+          - name: config.path
+            value: /../storage/metrics/configMetrics/metrics.json
+          - name: logs.path
+            value: /../storage/logs
           imagePullPolicy: Never
           ports:
             - containerPort: 8080
           volumeMounts:
             - name: storage
-              mountPath: metrics/savedMetrics
+              mountPath: storage
             - name: config-volume
-              mountPath: metrics/configMetrics
+              mountPath: storage/metrics/configMetrics
       volumes:
         - name: storage
           persistentVolumeClaim:
