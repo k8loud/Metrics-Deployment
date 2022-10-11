@@ -41,13 +41,18 @@ Manifests contain the following declarations:
 * Hephaestus GUI-related declarations (1 - 4)
 * Hephaestus Demo - Metrics Adapter related files (5 - 6)
 
-## Temporary deployment (since project files are now not on DockerHub)
-Before deploying change NAME:TAG to actual values in files containing "dep" in a name.
-Gui frontend should be built with command ng build --base-href /app/ and result files (not a directory) should be put in /resources/static/app in GUI backend.
+## Temporary deployment steps (since project files are now not on DockerHub)
 
-### Deployment steps
-* build an angular app
-* put result files (**files** not result directory) in GUI back
-* make .jar from GUI back & Metrics adapter
-* build docker images in **minikube env**
-* deploy pods
+Assuming minikube is running and all repos have been cloned into one root folder. All the commands below are supposed to be ran in the root folder.
+* build Angular app: `cd .\GUI\ ; ng build --base-href /app/ ; cd ..`
+* move result to the backend app: `cp .\GUI\dist\hephaestus-gui\* .\GUI-backend\hephaestus-backend\src\main\resources\static\app\`
+* build and install translator: `cd .\Translator\Translator\ ; mvn clean install ; cd ..\..`
+* build metrics adapter: `cd .\Metrics-Adapter\ ; mvn clean package ; cd ..`
+* build gui: `cd .\GUI-backend\hephaestus-backend\ ; mvn clean package -DskipTests ; cd ..\..`
+* turn on command execution in minikube docker:
+  * for windows powershell: `& minikube -p minikube docker-env --shell powershell | Invoke-Expression`
+  * for linux shell: `eval $(minikube docker-env)`
+* build dockerfile for metrics adapter: `cd .\Metrics-Adapter\ ; docker build -t hephaestus/demo:0.1 . ; cd ..`
+* build dockerfile for gui: `cd .\GUI-backend\hephaestus-backend\ ; docker build -t hephaestus/gui:0.1 . ; cd ..\..`
+
+Now you can deploy pods with `kubectl apply -f Deployment/manifests/`
