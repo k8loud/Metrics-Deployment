@@ -41,6 +41,13 @@ Manifests contain the following declarations:
 * Hephaestus GUI-related declarations (1 - 4)
 * Hephaestus Demo - Metrics Adapter related files (5 - 6)
 
+## Deployment with kie
+The kie namespace can be deployed independently from Hephaestus with:
+
+`kubectl apply -f Deployment/manifests-kie/`
+
+Use `minikube service -n kie kie-workbench` to expose the service (if multiple ports are exposed, used the first one) and navigate to /business-central to access the workbench. Usually it takes up to 5min after the pod is created for the workbench to start and the website to start responding - be patient. The default credentials are `admin` for both username and password.
+
 ## Temporary deployment (since project files are now not on DockerHub)
 Before deploying change NAME:TAG to actual values in files containing "dep" in a name.
 Gui frontend should be built with command ng build --base-href /app/ and result files (not a directory) should be put in /resources/static/app in GUI backend.

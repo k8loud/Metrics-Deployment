@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: hephaestus-gui
-          image: guiback # <-- custom
+          image: NAME:TAG
           env:
           - name: prometheus.address
             value: prometheus.monitoring:9090
