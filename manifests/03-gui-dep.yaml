@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: hephaestus-gui
-          image: hephaestus/gui:0.1
+          image: hephaestusmetrics/gui:latest
           env:
           - name: prometheus.address
             value: prometheus.monitoring:9090
@@ -25,7 +25,7 @@ spec:
             value: /../storage/metrics/configMetrics/metrics.json
           - name: logs.path
             value: /../storage/logs
-          imagePullPolicy: Never
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
           volumeMounts:
