@@ -19,6 +19,8 @@ spec:
           env:
           - name: KIE_SERVER_ID
             value: sample-server # TODO
+          - name: KIE_SERVER_LOCATION
+            value: http://kie-server:7080/kie-server/services/rest/server
           - name: KIE_SERVER_CONTROLLER
             value: http://kie-workbench.kie:6080/business-central/rest/controller # TODO
           - name: KIE_MAVEN_REPO
