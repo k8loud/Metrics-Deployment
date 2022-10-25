@@ -44,8 +44,8 @@ Manifests contain the following declarations:
 ## Temporary deployment steps (since project files are now not on DockerHub)
 
 Assuming minikube is running and all repos have been cloned into one root folder. All the commands below are supposed to be ran in the root folder.
-* build Angular app: `cd .\GUI\ ; ng build --base-href /app/ ; cd ..`
-* move result to the backend app: `cp .\GUI\dist\hephaestus-gui\* .\GUI-backend\hephaestus-backend\src\main\resources\static\app\`
+* build Angular app: `cd .\GUI\ ; ng build ; cd ..`
+* move result to the backend app: `cp .\GUI\dist\hephaestus-gui\* .\GUI-backend\hephaestus-backend\src\main\resources\static\`
 * build and install translator: `cd .\Translator\Translator\ ; mvn clean install ; cd ..\..`
 * build metrics adapter: `cd .\Metrics-Adapter\ ; mvn clean package ; cd ..`
 * build gui: `cd .\GUI-backend\hephaestus-backend\ ; mvn clean package -DskipTests ; cd ..\..`
