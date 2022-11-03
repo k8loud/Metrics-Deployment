@@ -37,22 +37,6 @@ Those steps allow you to see a real-life example of an application working with 
 
 ## Files Description
 Manifests contain the following declarations:
-* Hephaestus namespace (0)
-* Hephaestus GUI-related declarations (1 - 4)
-* Hephaestus Demo - Metrics Adapter related files (5 - 6)
-
-## Temporary deployment steps (since project files are now not on DockerHub)
-
-Assuming minikube is running and all repos have been cloned into one root folder. All the commands below are supposed to be ran in the root folder.
-* build Angular app: `cd .\GUI\ ; ng build ; cd ..`
-* move result to the backend app: `cp .\GUI\dist\hephaestus-gui\* .\GUI-backend\hephaestus-backend\src\main\resources\static\`
-* build and install translator: `cd .\Translator\Translator\ ; mvn clean install ; cd ..\..`
-* build metrics adapter: `cd .\Metrics-Adapter\ ; mvn clean package ; cd ..`
-* build gui: `cd .\GUI-backend\hephaestus-backend\ ; mvn clean package -DskipTests ; cd ..\..`
-* turn on command execution in minikube docker:
-  * for windows powershell: `& minikube -p minikube docker-env --shell powershell | Invoke-Expression`
-  * for linux shell: `eval $(minikube docker-env)`
-* build dockerfile for metrics adapter: `cd .\Metrics-Adapter\ ; docker build -t hephaestus/demo:0.1 . ; cd ..`
-* build dockerfile for gui: `cd .\GUI-backend\hephaestus-backend\ ; docker build -t hephaestus/gui:0.1 . ; cd ..\..`
-
-Now you can deploy pods with `kubectl apply -f Deployment/manifests/`
+* demo-metrics-adapter - Metrics Adapter related declarations
+* manifests - Hephaestus GUI and bbackend
+* volume-creation - Declarations for preparing volume for Hephaestus pod
