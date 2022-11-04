@@ -37,6 +37,10 @@ Those steps allow you to see a real-life example of an application working with 
 
 ## Files Description
 Manifests contain the following declarations:
+* demo-metrics-adapter - Metrics Adapter related declarations
+* manifests - Hephaestus GUI and bbackend
+* volume-creation - Declarations for preparing volume for Hephaestus pod
+
 * Hephaestus namespace (0)
 * Hephaestus GUI-related declarations (1 - 4)
 * Hephaestus Demo - Metrics Adapter related files (5 - 6)

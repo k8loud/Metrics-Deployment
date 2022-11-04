@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: metrics-adapter
-  namespace: hephaestus
+  namespace: metrics-adapter
 spec:
   replicas: 1
   selector:
@@ -15,8 +15,10 @@ spec:
     spec:
       containers:
         - name: metrics-adapter
-          image: NAME:TAG
-          args: ["--backend=http://hephaestus-gui:8080"]
-          imagePullPolicy: Never
+          image: hephaestusmetrics/metrics-adapter:latest
+          env:
+          - name: backend
+            value: http://hephaestus-gui.hephaestus:8080
+          imagePullPolicy: Always
           ports:
-            - containerPort: 8080
+            - containerPort: 8085 

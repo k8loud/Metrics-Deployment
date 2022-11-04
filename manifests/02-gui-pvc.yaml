@@ -4,6 +4,7 @@ metadata:
   name: hepheastus-gui-pvc
   namespace: hephaestus
 spec:
+  storageClassName: hephaestus-manual
   accessModes:
     - ReadWriteOnce
   resources:
