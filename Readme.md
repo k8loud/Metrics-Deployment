@@ -41,10 +41,6 @@ Manifests contain the following declarations:
 * manifests - Hephaestus GUI and bbackend
 * volume-creation - Declarations for preparing volume for Hephaestus pod
 
-* Hephaestus namespace (0)
-* Hephaestus GUI-related declarations (1 - 4)
-* Hephaestus Demo - Metrics Adapter related files (5 - 6)
-
 ## Deployment with kie
 The kie namespace can be deployed independently from Hephaestus with:
 
