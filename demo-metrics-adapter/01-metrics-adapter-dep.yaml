@@ -25,6 +25,6 @@ spec:
             value: BUSINESS_DEMO_TEST
           - name: loop.delay
             value: 1000
-          imagePullPolicy: Never
+          imagePullPolicy: Always
           ports:
             - containerPort: 8085 
