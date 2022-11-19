@@ -19,6 +19,12 @@ spec:
           env:
           - name: backend
             value: http://hephaestus-gui.hephaestus:8080
-          imagePullPolicy: Always
+          - name: kubernetes-management
+            value: http://kubernetes-management.kubernetes-management:8097
+          - name: mode
+            value: BUSINESS_DEMO_TEST
+          - name: loop.delay
+            value: 1000
+          imagePullPolicy: Never
           ports:
             - containerPort: 8085 
