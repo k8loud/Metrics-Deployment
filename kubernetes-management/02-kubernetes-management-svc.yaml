@@ -11,4 +11,4 @@ spec:
     - protocol: "TCP"
       port: 8097
       targetPort: 8097
-      nodePort: 31111
+      nodePort: 31212
