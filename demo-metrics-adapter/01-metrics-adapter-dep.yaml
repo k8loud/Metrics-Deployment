@@ -23,8 +23,6 @@ spec:
             value: http://kubernetes-management.kubernetes-management:8097
           - name: mode
             value: BUSINESS_DEMO_TEST
-          - name: loop.delay
-            value: 1000
           imagePullPolicy: Always
           ports:
             - containerPort: 8085 
