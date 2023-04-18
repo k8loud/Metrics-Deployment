@@ -21,7 +21,7 @@ If this is your first time dealing with Kubernetes, Prometheus, and Hephaestus w
 
 `kubectl apply -f microservices-demo/deploy/kubernetes/manifests-monitoring`
 * Deploy Hephaestus using 
-
+`kubectl apply -f Deployment/volume-creation/`
 `kubectl apply -f Deployment/manifests/`
 
 * Expose GUI service - Service can be exposed using command `minikube service -n hephaestus hephaestus-gui`. This will expose `<SERVICE ADDRESS: SERVICE PORT>` address and allow you to see acces Hephaestus GUI on `<SERVICE ADDRESS: SERVICE PORT>/app/index.html`.
